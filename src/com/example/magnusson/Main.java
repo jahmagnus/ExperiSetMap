@@ -10,23 +10,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Scanner sc = new Scanner(System.in);
-//
-//        System.out.println("Enter name");
-//        String name =  sc.nextLine();
-//
-//        System.out.println("Enter age");
-//        String age = sc.nextLine();
-//
-//        Employee employee = new Employee(name, age);
-//        employee.addEmployee(employee);
-//
-//        employeeSetCopy = employee.getEmployeeSet();
-//        System.out.println("Name: Age:");
-//        for (Employee employeeElement : employeeSetCopy){
-//            System.out.println(employeeElement.getName()+ " " + employeeElement.getAge());
-//        }
-
         boolean flag = true;
 
         System.out.println("0 - quit\n" +
@@ -53,25 +36,26 @@ public class Main {
     }
 
     private static void addNewEmployee(){
+        sc.nextLine();
         System.out.println("Employee name");
         String nameInput = sc.nextLine();
-
         System.out.println("Employee age");
         String ageInput = sc.nextLine();
+
 
         Employee employee = new Employee(nameInput, ageInput);
         employee.addEmployee(employee);
         getEmployeeData(employee);
     }
 
-    private static boolean getEmployeeData(Employee employee){
-        return employeeSetCopy.add(employee);
+    private static void getEmployeeData(Employee employee){
+        employeeSetCopy.add(employee);
     }
 
     private static void printEmployeeData(){
         System.out.println("Name  |  Age");
         for (Employee employee : employeeSetCopy){
-            System.out.println(employee.getName() + " " + employee.getAge());
+            System.out.println(employee.getName() + "     " + employee.getAge());
         }
     }
 }
